@@ -11,3 +11,28 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+let getFilteredPosts = function(filters) {
+    return {
+      "Posts": [
+          {
+              "Title": "Julia",
+              "Timestamp": "23409872349",
+              "Content": "Some text for the content",
+              "Tags": [
+                  "Tag1",
+                  "Tag2"
+              ]
+          },
+          {
+              "Title": "Julia",
+              "Timestamp": "23409872349",
+              "Content": "Some text for the content",
+              "Tags": [
+                  "Tag1",
+                  "Tag2"
+              ]
+          }
+      ]
+    }
+  }
