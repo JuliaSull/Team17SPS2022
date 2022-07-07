@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Handles requests to get a filtered result 
+ * Handles requests to get all results
  * to the project
  */
-@WebServlet("/getFilteredPosts")
-public class getFilteredPostsServlet extends HttpServlet {
+@WebServlet("/")
+public class getAllPostsServlet extends HttpServlet {
   @Override
   // Calls Function where we get the data from the database
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
