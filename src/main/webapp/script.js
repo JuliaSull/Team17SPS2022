@@ -50,38 +50,40 @@ let getFilteredPosts = function(filters) {
 
 Posts = getFilteredPosts();
 
-for(let i = 0; i < Posts.Post.length; i++){
-    const ul = document.querySelector('ul');
-    const li = document.createElement('li');
-    li.classList.add('notes')
-    console.log(li);
-    ul.append(li)
-
-    const p = document.createElement('p');
-    p.innerText = Posts.Post[i].Title;
-    p.classList.add('title')
-
-    li.append(p);
-
-    const span = document.createElement('span');
-    span.innerText= Posts.Post[i].Content;
-    span.classList.add('description');
-
-    li.append(span)
-
-    const tags = document.createElement('ul');
-    tags.classList.add('tags')
-
-    console.log(Posts.Post[0].Tags[1])
-
-    for(let j = 0; j < Posts.Post[i].Tags.length; j++){
-        console.log(Posts.Post[i].Tags[j])
-        const subTags = document.createElement('li');
-        const buttons = document.createElement('button')
-        subTags.append(buttons);
-        buttons.innerText = Posts.Post[i].Tags[j];
-        tags.append(subTags);
+function refreshTimeline() {
+    for(let i = 0; i < Posts.Post.length; i++){
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.classList.add('notes')
+        console.log(li);
+        ul.append(li)
+    
+        const p = document.createElement('p');
+        p.innerText = Posts.Post[i].Title;
+        p.classList.add('title')
+    
+        li.append(p);
+    
+        const span = document.createElement('span');
+        span.innerText= Posts.Post[i].Content;
+        span.classList.add('description');
+    
+        li.append(span)
+    
+        const tags = document.createElement('ul');
+        tags.classList.add('tags')
+    
+        console.log(Posts.Post[0].Tags[1])
+    
+        for(let j = 0; j < Posts.Post[i].Tags.length; j++){
+            console.log(Posts.Post[i].Tags[j])
+            const subTags = document.createElement('li');
+            const buttons = document.createElement('button')
+            subTags.append(buttons);
+            buttons.innerText = Posts.Post[i].Tags[j];
+            tags.append(subTags);
+        }
+    
+        li.append(tags);
     }
-
-    li.append(tags);
-}
+ }
