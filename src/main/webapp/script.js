@@ -52,7 +52,7 @@ Posts = getFilteredPosts();
 
 function refreshTimeline() {
     for(let i = 0; i < Posts.Post.length; i++){
-        const ul = document.querySelector('ul');
+        const ul = document.getElementById('wrapper');
         const li = document.createElement('li');
         li.classList.add('notes')
         console.log(li);
