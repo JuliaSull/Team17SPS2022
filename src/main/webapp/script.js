@@ -48,13 +48,9 @@ let getPosts = function(filters) {
     }
   }
 
-
-  let filteredPost = function(filter){
-
-  }
 Posts = getPosts();
 
-function refreshTimeline(){
+function refreshTimeline() {
     for(let i = 0; i < Posts.Post.length; i++){
         const ul = document.getElementById('wrapper');
         const li = document.createElement('li');
@@ -89,5 +85,5 @@ function refreshTimeline(){
         }
     
         li.append(tags);
-    }    
-}
+    }
+ }
