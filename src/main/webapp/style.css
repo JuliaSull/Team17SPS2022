@@ -1,4 +1,19 @@
 body {
+<<<<<<< HEAD
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    border-bottom: solid 1px #e1e1e1;
+  }
+  .navbar a {
+    float: left;
+=======
   margin: 0;
   padding: 0;
 }
@@ -75,26 +90,90 @@ li{
     font-weight: 500;
 }
 .notes span{
+>>>>>>> 93c36859a55faf1f96e6b0a88e9122c0a800683c
     display: block;
-    margin-top: 5px;
-    color: #575757;
-    font-size: 16px;
-}
-
-.tags{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 5%;
-}   
-.tags > li > button{
-    background-color: #E6E6FA;
-    padding: 5px 5px 5px 5px;
-    border-radius: 5px;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar .search-container {
+    float: right;
+    border-radius: 10px;
+  
+  }
+  
+  .navbar input[type="text"] {
+    padding: 4px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: solid 1px black;
+    border-right: none;
+  }
+  
+  .navbar .search-container button {
+    float: right;
+    padding: 4px 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: solid rgba(0,0,0,0.8);
     cursor: pointer;
-    border: none;
-}
-
-button:hover{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
-}
+  }
+  
+  .navbar .search-container button:hover {
+    background: #ccc;
+  }
+  
+  #wrapper{
+      margin: 0% 20% 0% 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  li{
+      list-style: none;
+  }
+  .notes{
+      margin-top: 10%;
+      background-color: #F8F8FF;
+      padding:5% 5% 5% 5%;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+  }
+  
+  .notes:hover{
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.65);
+  }
+  .notes p{
+      font-size: 22px;
+      font-weight: 500;
+  }
+  .notes span{
+      display: block;
+      margin-top: 5px;
+      color: #575757;
+      font-size: 16px;
+  }
+  
+  .tags{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 5%;
+  }   
+  .tags > li > button{
+      background-color: #E6E6FA;
+      padding: 5px 5px 5px 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+  }
+  
+  button:hover{
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+  }

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-let getFilteredPosts = function(filters) {
+let getPosts = function(filters) {
     return {
       "Post": [
           {
@@ -48,7 +48,7 @@ let getFilteredPosts = function(filters) {
     }
   }
 
-Posts = getFilteredPosts();
+Posts = getPosts();
 
 function refreshTimeline() {
     for(let i = 0; i < Posts.Post.length; i++){
