@@ -1,19 +1,4 @@
 body {
-<<<<<<< HEAD
-    margin: 0;
-    padding: 0;
-  }
-  .navbar {
-    overflow: hidden;
-    background-color: white;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    border-bottom: solid 1px #e1e1e1;
-  }
-  .navbar a {
-    float: left;
-=======
   margin: 0;
   padding: 0;
 }
@@ -90,7 +75,6 @@ li{
     font-weight: 500;
 }
 .notes span{
->>>>>>> 93c36859a55faf1f96e6b0a88e9122c0a800683c
     display: block;
     color: black;
     text-align: center;
