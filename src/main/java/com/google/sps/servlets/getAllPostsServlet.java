@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Handles requests to get a filtered result 
+ * Handles requests to get all results
  * to the project
  */
-@WebServlet("/getFilteredPosts")
-public class getFilteredPostsServlet extends HttpServlet {
+@WebServlet("/getAllPost")
+public class getAllPostsServlet extends HttpServlet {
   @Override
-  // Calls Function where we get the data from the database
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Creates an instance of a datastore object
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query = Query.newEntityQueryBuilder().setKind("PostOnPage").setOrderBy(OrderBy.desc("timestamp"))
         .build();
@@ -36,14 +36,14 @@ public class getFilteredPostsServlet extends HttpServlet {
     while (results.hasNext()) {
       Entity entity = results.next();
       //Saves the entity data into variables
-      long id = entity.getKey().getId();
-      String title = entity.getString("title");
-      long timestamp = entity.getLong("timestamp");
-      String content_text = entity.getString("content_text");
-      String content_image = entity.getString("content_image");
-      String temp_tag = entity.getString("tag");
-      List<String> tag = convertStringToList(temp_tag);
-      PostOnPage post = new PostOnPage(id, title, tag, content_text, content_image, timestamp);
+      PostOnPage post = 
+      new PostOnPage(
+          entity.getKey().getId(), 
+          entity.getString("title"), 
+          convertStringToList(entity.getString("tag")), 
+          entity.getString("content_text"), 
+          entity.getString("content_image"), 
+          entity.getLong("timestamp"));
       Post.add(post);
     }
     Gson gson = new Gson();
@@ -55,9 +55,11 @@ public class getFilteredPostsServlet extends HttpServlet {
     String[] array = null;
     array = text.split(", ");
     List<String> result = new ArrayList<String>();
+    //Pass the values of the array into the list
     for (int i = 0; i < array.length; i++) {
       result.add(array[i]);
     }
+    //Returns the list
     return result;
   }
 }
