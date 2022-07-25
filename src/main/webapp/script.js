@@ -22,6 +22,7 @@
 //     //Get the posts    
 //     callback(posts);
 // }
+
 let getPosts = function(filters) {
     return {
       "Post": [
@@ -87,7 +88,6 @@ function refreshTimeline() {
         const span = document.createElement('span');
         span.innerText= Posts.Post[i].Content;
         span.classList.add('description');
-    
         li.append(span)
     
         const tags = document.createElement('ul');
@@ -105,5 +105,28 @@ function refreshTimeline() {
         }
     
         li.append(tags);
-    }
+     }
  }
+
+
+ function filter() {
+  var input, output, data, tr, td, filtered;
+  input = document.getElementById("search");
+  output = input.value.toLowerCase();
+  data = document.getElementById("posts");
+  tr = data.getElementsByTagName("tr");
+  for (var i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td");
+    for (var j = 0; j < td.length; j++) {
+      filtered = tr[i].getElementsByTagName("td")[j];
+      if (filtered) {
+        if (filtered.innerHTML.toLowerCase().indexOf(output) >= 0) {
+          tr[i].style.display = "";
+        }
+        else{
+            tr[i].style.display="none";
+        } 
+      }
+    }
+  }
+}
