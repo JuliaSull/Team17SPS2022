@@ -48,6 +48,7 @@ let getPosts = function(filters) {
     }
   }
 
+
 Posts = getPosts();
 
 function refreshTimeline() {
