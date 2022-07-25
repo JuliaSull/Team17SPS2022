@@ -64,31 +64,31 @@
     </div>
 
     <form id="widget-form" class="widget-post__form" name="form">
-    <div class="widget-post__content">
-      <label for="post-content" class="sr-only">What's in your mind</label>
-      <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
-    </div>
+        <div class="widget-post__content">
+            <label for="post-content" class="sr-only">What's in your mind</label>
+            <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
+        </div>
 
-    <div class="widget-post__actions post--actions">
-      <div class="post-actions__attachments">
-        <button type="button" Class="btn post-actions__stock attachments--btn">
-          ADHD
-        </button>
-        <button type="button" Class="btn post-actions__stock attachments--btn">
-          OCD
-        </button>
-        <button type="button" Class="btn post-actions__stock attachments--btn">
-          Depression
-        </button>
-        <button type="button" Class="btn post-actions__stock attachments--btn">
-          Trauma
-        </button>
-      </div>
-      
-      <div class="post-actions__widget">
-        <button class="btn post-actions__publish">Post</button>
-      </div> 
-    </div>
+        <div class="widget-post__actions post--actions">
+            <div class="post-actions__attachments">
+                <button id="isADHD" type="button" class="btn post-actions__stock attachments--btn">
+                    ADHD
+                </button>
+                <button id="isOCD"type="button" class="btn post-actions__stock attachments--btn">
+                    OCD
+                </button>
+                <button id="isDepression"type="button" class="btn post-actions__stock attachments--btn">
+                    Depression
+                </button>
+                <button id="isTrauma"type="button" class="btn post-actions__stock attachments--btn">
+                    Trauma
+                </button>
+            </div>
+            
+            <div class="post-actions__widget">
+                <button class="btn post-actions__publish" onclick="storePost()">Post</button>
+            </div> 
+        </div>
     </form>
     </div>
     
