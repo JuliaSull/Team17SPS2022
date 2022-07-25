@@ -12,6 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// getPosts(stuff, function(posts) {
+//     storePosts(posts, function(receipt) {
+        
+//     });
+// });
+
+// let getPosts = function(filters, callback) {
+//     //Get the posts    
+//     callback(posts);
+// }
 let getPosts = function(filters) {
     return {
       "Post": [
@@ -50,6 +60,16 @@ let getPosts = function(filters) {
 
 
 Posts = getPosts();
+
+function storePost() {
+    // store the post in the database
+    //     getElementById("post-conent").value
+    //     getElementById("isADHD").checked
+    //     Stick them in a javascript object, jsonify it, and store it
+    // .then()
+    // Posts = getPosts();
+    // refreshTimeline();
+}
 
 function refreshTimeline() {
     for(let i = 0; i < Posts.Post.length; i++){

@@ -27,13 +27,52 @@
         </div>
       </div>
     </header>
+    
+    <!-- Start of Create Post -->
+    
+    <div class="widget-post" aria-labelledby="post-header-title">
+    <div class="widget-post__header">
+        <h2 class="widget-post__title" id="post-header-title">
+            Create Post
+        </h2>
+    </div>
 
-    <div>
+    <form id="widget-form" class="widget-post__form" name="form">
+        <div class="widget-post__content">
+            <label for="post-content" class="sr-only">What's in your mind</label>
+            <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
+        </div>
+
+        <div class="widget-post__actions post--actions">
+            <div class="post-actions__attachments">
+                <button id="isADHD" type="button" class="btn post-actions__stock attachments--btn">
+                    ADHD
+                </button>
+                <button id="isOCD"type="button" class="btn post-actions__stock attachments--btn">
+                    OCD
+                </button>
+                <button id="isDepression"type="button" class="btn post-actions__stock attachments--btn">
+                    Depression
+                </button>
+                <button id="isTrauma"type="button" class="btn post-actions__stock attachments--btn">
+                    Trauma
+                </button>
+            </div>
+            
+            <div class="post-actions__widget">
+                <button class="btn post-actions__publish" onclick="storePost()">Post</button>
+            </div> 
+        </div>
+    </form>
+    </div>
+    
+    <!-- End of Create Post -->
+    
+     <div>
       <ul id="wrapper">
           
       </ul>
-  </div>
-
-
+    </div>
+    
   </body>
 </html>
