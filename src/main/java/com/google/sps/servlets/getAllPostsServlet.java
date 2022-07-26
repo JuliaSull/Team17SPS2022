@@ -19,12 +19,16 @@ import com.google.sps.data.PostOnPage;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.io.IOException;
+import java.io.OutputStream;
+
 /**
  * Handles requests to get all results
  * to the project
  */
 @WebServlet("/getAllPost")
 public class getAllPostsServlet extends HttpServlet {
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Creates an instance of a datastore object
