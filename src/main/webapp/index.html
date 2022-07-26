@@ -37,7 +37,11 @@
         </h2>
     </div>
 
-    <form id="widget-form" class="widget-post__form" name="form">
+    <form action = "/storePost" method="post" id="widget-form" class="widget-post__form" name="form">
+        <div>
+            <label for="title" id="title" class="sr-only">Title</label>
+            <input type="text" placeholder="Title" class="widget-post__textarea scroller">
+        </div>
         <div class="widget-post__content">
             <label for="post-content" class="sr-only">What's in your mind</label>
             <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
@@ -60,7 +64,7 @@
             </div>
             
             <div class="post-actions__widget">
-                <button class="btn post-actions__publish" onclick="storePost()">Post</button>
+                <button class="btn post-actions__publish">Post</button>
             </div> 
         </div>
     </form>

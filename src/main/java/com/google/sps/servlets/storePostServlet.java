@@ -15,17 +15,27 @@ import javax.servlet.http.HttpServletResponse;
 /** Handles post request to the project */
 @WebServlet("/storePost")
 public class storePostServlet extends HttpServlet {
+
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String title = request.getParameter("title-input");
-    String content_text = request.getParameter("content-input");
+    String title = request.getParameter("title");
+    String content_text = request.getParameter("post-content");
+
+    response.getWriter().println(title);
+    response.getWriter().println(content_text);
+
+
+
+
     // Placeholder for images
     String content_image = "";
+
     // Placeholder for tags;
     String tag = "tag1, tag2";
     long timestamp = System.currentTimeMillis();
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("PostOnPage");
+
     // Creates data in entity
     FullEntity PostOnPageEntity = Entity.newBuilder(keyFactory.newKey())
         .set("title", title)
@@ -36,5 +46,6 @@ public class storePostServlet extends HttpServlet {
         .build();
     datastore.put(PostOnPageEntity);
     response.sendRedirect("/index.html");
+
   }
 }
