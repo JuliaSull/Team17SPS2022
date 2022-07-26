@@ -73,30 +73,34 @@
         </h2>
     </div>
 
-    <form id="widget-form" class="widget-post__form" name="form">
+    <form action = "/storePost" method="post" id="widget-form" class="widget-post__form" name="form">
     <div class="widget-post__content">
       <label for="post-content" class="sr-only">What's in your mind</label>
+      <textarea name="title-post" id="post-content" class="widget-post__textarea scroller" placeholder="Title"></textarea>
       <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
     </div>
 
     <div class="widget-post__actions post--actions">
       <div class="post-actions__attachments">
-        <button type="button" Class="btn post-actions__stock attachments--btn">
+        <input type="checkbox" name="Tags" value="ADHD">
           ADHD
-        </button>
-        <button type="button" Class="btn post-actions__stock attachments--btn">
+      </input>
+        <input type="checkbox" name="Tags" value="OCD">
           OCD
-        </button>
-        <button type="button" Class="btn post-actions__stock attachments--btn">
+        </input>
+        <input type="checkbox" name="Tags" value="Depression">
           Depression
-        </button>
-        <button type="button" Class="btn post-actions__stock attachments--btn">
+        </input>
+        <input type="checkbox" name="Tags"  value="Trauma">
           Trauma
-        </button>
+        </input>
+        <input type="hidden" name="selectedTags" id="selectedTags"/>
       </div>
       
       <div class="post-actions__widget">
-        <button class="btn post-actions__publish">Post</button>
+        <button class="btn post-actions__publish" onclick="TagsSelected()">
+            Post
+        </button>
       </div> 
     </div>
     </form>
