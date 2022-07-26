@@ -21,7 +21,7 @@
         <a href="#">LINK3</a>
         <div class="search-container">
           <form action="#">
-            <input type="text" placeholder="Search.." name="search" />
+            <input type="text" placeholder="Search.." id="search" onkeyup="filter()"/>
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -37,36 +37,72 @@
         </h2>
     </div>
 
-    <form action = "/storePost" method="post" id="widget-form" class="widget-post__form" name="form">
-        <div>
-            <label for="title" id="title" class="sr-only">Title</label>
-            <input type="text" placeholder="Title" class="widget-post__textarea scroller">
-        </div>
-        <div class="widget-post__content">
-            <label for="post-content" class="sr-only">What's in your mind</label>
-            <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
-        </div>
+    <!-- Filter -->
+    <table id="posts">
+        <tr id="header">
+            <th>Title</th>
+            <th>Timestamp</th>
+            <th>Content</th>
+            <th>Tags</th>
+        </tr>
+        <tr>
+        <td>Test Title</td>
+        <td>23409872349</td>
+        <td>lorem ipsum dolor sit amet consectetur adipiscing elit proin dictumst enim etiam nisi neque suspendisse vel lectus phasellus elementum magna hendrerit iaculis maximus tempor mollis purus a odio gravida euismod ad nibh torquent justo tellus duis nec eleifend pretium nascetur ornare nam ex erat bibendum dui aptent himenaeos leo tincidunt pellentesque tempus id commodo habitasse laoreet ligula conubia nisl ante donec molestie vestibulum nostra augue arcu primis feugiat ut interdum accumsan quisque vitae finibus penatibus consequat venenatis praesent inceptos nulla taciti varius rutrum ac congue in imperdiet et condimentum auctor vehicula montes nunc litora quam velit urna eget ultricies quis</td>
+        <td>Depression, PTSD, Trauma</td>
+        </tr>
+        <tr>
+        <td>Test Title 2</td>
+        <td>23409872349</td>
+        <td>lorem ipsum dolor sit amet consectetur adipiscing elit nisi condimentum venenatis tellus pulvinar sollicitudin nullam tortor risus est penatibus mi lectus nulla rutrum in hac finibus maecenas cursus iaculis eget primis rhoncus habitasse commodo cubilia aptent facilisi habitant egestas feugiat nascetur ligula magna viverra ornare suspendisse fusce praesent volutpat suscipit conubia laoreet magnis sed mollis nisl et lacinia natoque imperdiet dapibus litora potenti aliquet cras fermentum ad mauris massa taciti morbi nam gravida enim maximus ridiculus eros pharetra integer congue diam vestibulum inceptos vel parturient efficitur porttitor platea curae dictum scelerisque a mus posuere bibendum consequat torquent quam vulputate aenean</td>
+        <td>Tension, Harrashment</td>
+        </tr>
+        <tr>
+        <td>Test Title 3</td>
+        <td>23409872340</td>
+        <td>lorem ipsum dolor sit amet consectetur adipiscing elit taciti porttitor primis diam tempor conubia pulvinar habitasse porta aliquet urna vulputate integer metus nascetur risus massa eu neque leo vivamus parturient volutpat id congue aliquam facilisi libero etiam arcu fermentum efficitur sagittis pellentesque pretium accumsan elementum aptent magna auctor fusce fringilla finibus faucibus senectus duis nullam enim curabitur turpis sapien praesent posuere inceptos semper fames facilisis nulla sollicitudin hendrerit mollis dictum potenti habitant scelerisque nostra platea vehicula ullamcorper imperdiet eget litora lacus sociosqu morbi hac ridiculus tincidunt nisl orci ultrices per interdum tellus justo a ad velit vel tortor lacinia torquent</td>
+        <td>Tension,Harrashment,LGBTQ+</td>
+        </tr>
+    </table>
+    <!-- Start of Create Post -->
+    
+    <div class="widget-post" aria-labelledby="post-header-title">
+    <div class="widget-post__header">
+        <h2 class="widget-post__title" id="post-header-title">
+            Create Post
+        </h2>
+    </div>
 
-        <div class="widget-post__actions post--actions">
-            <div class="post-actions__attachments">
-                <button id="isADHD" type="button" class="btn post-actions__stock attachments--btn">
-                    ADHD
-                </button>
-                <button id="isOCD"type="button" class="btn post-actions__stock attachments--btn">
-                    OCD
-                </button>
-                <button id="isDepression"type="button" class="btn post-actions__stock attachments--btn">
-                    Depression
-                </button>
-                <button id="isTrauma"type="button" class="btn post-actions__stock attachments--btn">
-                    Trauma
-                </button>
-            </div>
-            
-            <div class="post-actions__widget">
-                <button class="btn post-actions__publish">Post</button>
-            </div> 
-        </div>
+    <form action = "/storePost" method="post" id="widget-form" class="widget-post__form" name="form">
+    <div class="widget-post__content">
+      <label for="post-content" class="sr-only">What's in your mind</label>
+      <textarea name="title-post" id="post-content" class="widget-post__textarea scroller" placeholder="Title"></textarea>
+      <textarea name="post" id="post-content" class="widget-post__textarea scroller" placeholder="What's in your mind"></textarea>
+    </div>
+
+    <div class="widget-post__actions post--actions">
+      <div class="post-actions__attachments">
+        <input type="checkbox" name="Tags" value="ADHD">
+          ADHD
+      </input>
+        <input type="checkbox" name="Tags" value="OCD">
+          OCD
+        </input>
+        <input type="checkbox" name="Tags" value="Depression">
+          Depression
+        </input>
+        <input type="checkbox" name="Tags"  value="Trauma">
+          Trauma
+        </input>
+        <input type="hidden" name="selectedTags" id="selectedTags"/>
+      </div>
+      
+      <div class="post-actions__widget">
+        <button class="btn post-actions__publish" onclick="TagsSelected()">
+            Post
+        </button>
+      </div> 
+    </div>
     </form>
     </div>
     

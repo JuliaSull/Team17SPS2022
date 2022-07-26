@@ -18,20 +18,11 @@ public class storePostServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String title = request.getParameter("title");
-    String content_text = request.getParameter("post-content");
-
-    response.getWriter().println(title);
-    response.getWriter().println(content_text);
-
-
-
-
+    String title = request.getParameter("title-post");
+    String content_text = request.getParameter("post");
     // Placeholder for images
-    String content_image = "";
-
-    // Placeholder for tags;
-    String tag = "tag1, tag2";
+    String content_image = "test-image";
+    String tag = request.getParameter("selectedTags");
     long timestamp = System.currentTimeMillis();
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("PostOnPage");

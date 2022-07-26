@@ -50,6 +50,7 @@ public class getAllPostsServlet extends HttpServlet {
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(Post));
   }
+  
   //Converts Normal Strings into a List of Strings
   public List<String> convertStringToList(String text) {
     String[] array = null;
