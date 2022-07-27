@@ -52,16 +52,31 @@ let getPosts = function (filters) {
   };
 };
 
-async function onLoad() {    
-  obj= await fetch('/getPosts').then(a=>a.json());
-  console.log(JSON.stringify(obj));
+// async function onLoad() {    
+//   obj= await fetch('/getPosts').then(a=>a.json());
+//   console.log(JSON.stringify(obj));
+// }
+
+// function getAllPosts(){
+//    return fetch('/getAllPost').then(response => response.json()).then(data=>console.log(data));
+// }
+ 
+// Test = getAllPosts();
+
+async function getAllPosts() {
+    await fetch('/getAllPost')
+        .then(postsAsString=>postsAsString.json()).then(function(listOfPosts) {
+      Posts = listOfPosts;
+      console.log(listOfPosts);
+      refreshTimeline();
+    });
 }
 
-Posts = getPosts();
+Posts = [];
 
 //function storePost() {
   // store the post in the database
-  //     getElementById("post-conent").value
+  //     getElementById("post-content").value
   //     getElementById("isADHD").checked
   //     Stick them in a javascript object, jsonify it, and store it
   // .then()
@@ -70,35 +85,32 @@ Posts = getPosts();
 //}
 
 function refreshTimeline() {
-  for (let i = 0; i < Posts.Post.length; i++) {
+  for (let i = 0; i < Posts.length; i++) {
     const ul = document.getElementById("wrapper");
     const li = document.createElement("li");
     li.classList.add("notes");
-    console.log(li);
     ul.append(li);
 
     const p = document.createElement("p");
-    p.innerText = Posts.Post[i].Title;
+    p.innerText = Posts[i].title;
     p.classList.add("title");
 
     li.append(p);
 
     const span = document.createElement("span");
-    span.innerText = Posts.Post[i].Content;
+    span.innerText = Posts[i].content_text;
     span.classList.add("description");
     li.append(span);
 
     const tags = document.createElement("ul");
     tags.classList.add("tags");
 
-    console.log(Posts.Post[0].Tags[1]);
 
-    for (let j = 0; j < Posts.Post[i].Tags.length; j++) {
-      console.log(Posts.Post[i].Tags[j]);
+    for (let j = 0; j < Posts[i].tag.length; j++) {
       const subTags = document.createElement("li");
       const buttons = document.createElement("button");
       subTags.append(buttons);
-      buttons.innerText = Posts.Post[i].Tags[j];
+      buttons.innerText = Posts[i].tag[j];
       tags.append(subTags);
     }
 
@@ -140,8 +152,3 @@ function filter() {
   }
 }
 
-loadJSON("https://jsonplaceholder.typicode.com/posts", getData, 'jsonp');
-
-function getData(Data) {
-  console.log(Data[0]);
-}

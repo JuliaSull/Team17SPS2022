@@ -11,6 +11,7 @@ public class PostOnPage {
   public final String content_text;
   public final String content_image;
   public final long timestamp;
+  
   //Constructor
   public PostOnPage(long id, String title, List<String> tag, String content_text, String content_image, long timestamp) {
     this.id = id;
