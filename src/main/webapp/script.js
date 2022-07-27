@@ -127,7 +127,7 @@ function TagsSelected() {
     }
   }
   var hiddenSelectedTags = document.getElementById("selectedTags");
-  hiddenSelectedTags.value = TagSelected.join(",");
+  hiddenSelectedTags.value = TagSelected.join(", ");
   form.submit();
 }
 
