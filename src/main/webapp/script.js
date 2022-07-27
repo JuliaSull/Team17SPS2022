@@ -144,6 +144,7 @@ function filter() {
       if (filtered) {
         if (filtered.innerHTML.toLowerCase().indexOf(output) >= 0) {
           tr[i].style.display = "";
+          break;
         } else {
           tr[i].style.display = "none";
         }
