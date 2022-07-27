@@ -14,14 +14,7 @@
 <body onload=getAllPosts()>
   <header>
     <div class="navbar">
-      <img src="./beans.png" width="300px" height="90px"/>
-
-      <div class="search-container">
-        <form action="#">
-          <input type="text" placeholder="Search.." id="search" onkeyup="filter()" />
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
+        <img src="./beans.png" alt="title-image" class="title-img" />
     </div>
   </header>
 
@@ -44,22 +37,23 @@
 
         <div class="widget-post__actions post--actions">
           <div class="post-actions__attachments">
-            <input type="checkbox" name="Tags" value="ADHD">
+            <input type="checkbox" name="Tags" value="ADHD" class="plus-minus">
             ADHD
             </input>
-            <input type="checkbox" name="Tags" value="OCD">
+            <input type="checkbox" name="Tags" value="OCD"class="plus-minus">
             OCD
             </input>
-            <input type="checkbox" name="Tags" value="Depression">
+            <input type="checkbox" name="Tags" value="Depression"class="plus-minus">
             Depression
             </input>
-            <input type="checkbox" name="Tags" value="Trauma">
+            <input type="checkbox" name="Tags" value="Trauma"class="plus-minus">
             Trauma
             </input>
-            <input type="checkbox" name="Tags" value="Harrashment">
+
+            <input type="checkbox" name="Tags" value="Harrashment"class="plus-minus">
             Harrashment
             </input>
-            <input type="checkbox" name="Tags" value="Tension">
+            <input type="checkbox" name="Tags" value="Tension"class="plus-minus">
             Tension
             </input>
             <input type="hidden" name="selectedTags" id="selectedTags" />
